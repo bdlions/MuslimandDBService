@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Sun Mar 15 23:12:26 ALMT 2015
+default-http\://repo.maven.apache.org/maven2/.lastUpdated=1426439546110
+http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.sonatype.plugins\:nexus-staging-maven-plugin\:jar\:1.6.2 from/to central (http\://repo.maven.apache.org/maven2)\: null to http\://repo.maven.apache.org/maven2/org/sonatype/plugins/nexus-staging-maven-plugin/1.6.2/nexus-staging-maven-plugin-1.6.2.jar
