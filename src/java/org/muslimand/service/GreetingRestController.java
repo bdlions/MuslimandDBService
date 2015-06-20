@@ -5,7 +5,11 @@ package org.muslimand.service;
  * and open the template in the editor.
  */
 
+import com.google.gson.JsonObject;
+import com.shampan.db.services.LandingPage;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
+import org.json.JSONObject;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +28,24 @@ public class GreetingRestController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-                String.format(template, name));
+    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name, @RequestParam(value = "userId") String userId) {
+        System.out.println(userId);
+        JSONObject object = new JSONObject();
+        object.put("name", name);
+        object.put("userId", userId);
+        
+        return object.toString();
+    }
+    
+    @RequestMapping("/arrayTest")
+    public String arrayTest(@RequestParam(value = "input", defaultValue = "{}") String input) {
+        JSONObject object = new JSONObject(input);
+        return object.getString("name");
+    }
+    
+    
+    @RequestMapping("/getCountryAndReligion")
+    public String getCountryAndReligion() {
+        return LandingPage.getCountryAndReligion();
     }
 }
