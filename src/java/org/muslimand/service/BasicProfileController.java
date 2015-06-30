@@ -89,5 +89,25 @@ public class BasicProfileController {
         String response = BasicProfileService.addRelationshipStatus(userId, additionalData);
         return response;
     }
+    @RequestMapping("/addMobilePhone")
+    public String addMobilePhone(@RequestParam String userId, @RequestParam String additionalData) {
+        String response = BasicProfileService.addMobilePhone(userId, additionalData);
+        return response;
+    }
+    @RequestMapping("/addAddress")
+    public String addAddress(@RequestParam String userId, @RequestParam String additionalData) {
+        String response = BasicProfileService.addAddress(userId, additionalData);
+        return response;
+    }
+    @RequestMapping("/addWebsite")
+    public String addWebsite(@RequestParam String userId, @RequestParam String additionalData) {
+        String response = BasicProfileService.addWebsite(userId, additionalData);
+        return response;
+    }
+    @RequestMapping("/addEmail")
+    public String addEmail(@RequestParam String userId, @RequestParam String additionalData) {
+        String response = BasicProfileService.addEmail(userId, additionalData);
+        return response;
+    }
 
 }
