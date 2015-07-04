@@ -85,28 +85,28 @@ public class BasicProfileController {
         return response;
     }
     @RequestMapping("/addRelationshipStatus")
-    public String addRelationshipStatus(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addRelationshipStatus(userId, additionalData);
+    public String addRelationshipStatus(@RequestParam String userId, @RequestParam String relationshipStatus) {
+        String response = BasicProfileService.addRelationshipStatus(userId, relationshipStatus);
         return response;
     }
     @RequestMapping("/addMobilePhone")
-    public String addMobilePhone(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addMobilePhone(userId, additionalData);
+    public String addMobilePhone(@RequestParam String userId, @RequestParam String mobilePhoneInfo) {
+        String response = BasicProfileService.addMobilePhone(userId, mobilePhoneInfo);
         return response;
     }
     @RequestMapping("/addAddress")
-    public String addAddress(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addAddress(userId, additionalData);
+    public String addAddress(@RequestParam String userId, @RequestParam String addressInfo) {
+        String response = BasicProfileService.addAddress(userId, addressInfo);
         return response;
     }
     @RequestMapping("/addWebsite")
-    public String addWebsite(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addWebsite(userId, additionalData);
+    public String addWebsite(@RequestParam String userId, @RequestParam String websiteInfo) {
+        String response = BasicProfileService.addWebsite(userId, websiteInfo);
         return response;
     }
     @RequestMapping("/addEmail")
-    public String addEmail(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addEmail(userId, additionalData);
+    public String addEmail(@RequestParam String userId, @RequestParam String emailInfo) {
+        String response = BasicProfileService.addEmail(userId, emailInfo);
         return response;
     }
 
