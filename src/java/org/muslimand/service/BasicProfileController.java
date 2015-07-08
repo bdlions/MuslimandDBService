@@ -24,6 +24,11 @@ public class BasicProfileController {
         return name;
     }
 
+    @RequestMapping("/getOverview")
+    public String getOverview(String userId) {
+        return BasicProfileService.getOverview(userId);
+    }
+    
     @RequestMapping("/getWorksEducation")
     public String getWorksEducation(String userId) {
         return BasicProfileService.getWorksEducation(userId);
