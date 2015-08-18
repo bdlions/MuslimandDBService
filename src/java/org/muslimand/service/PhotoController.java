@@ -26,6 +26,13 @@ public class PhotoController {
     public String createAlbum(String albumInfo) {
         return PhotoService.createAlbum(albumInfo);
     }
+    
+    @RequestMapping("/getCategoriesAndAlbums")
+    public String getCategoriesAndAlbums(String userId) {
+        return PhotoService.getCategoriesAndAlbums(userId);
+    }
+    
+    
     @RequestMapping("/getAlbums")
     public String getAlbums(String userId) {
         return PhotoService.getAlbums(userId);
