@@ -49,10 +49,25 @@ public class BasicProfileController {
         String BasicInfo = BasicProfileService.getContactBasicInfo(userId);
         return BasicInfo;
     }
+    @RequestMapping("/getAboutFQuote")
+    public String getAboutFQuote(@RequestParam String userId) {
+        String aboutFQuote = BasicProfileService.getAboutFQuote(userId);
+        return aboutFQuote;
+    }
 
     @RequestMapping("/addWorkPlace")
     public String addWorkPlace(@RequestParam String userId, @RequestParam String additionalData) {
         String response = BasicProfileService.addWorkPlace(userId, additionalData);
+        return response;
+    }
+    @RequestMapping("/addAbout")
+    public String addAbout(@RequestParam String userId, @RequestParam String aboutInfo) {
+        String response = BasicProfileService.addAbout(userId, aboutInfo);
+        return response;
+    }
+    @RequestMapping("/addFQuote")
+    public String addFQuote(@RequestParam String userId, @RequestParam String fQuoteInfo) {
+        String response = BasicProfileService.addFQuote(userId, fQuoteInfo);
         return response;
     }
 
