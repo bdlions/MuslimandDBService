@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.muslimand.service;
 
 import com.shampan.db.services.BasicProfileService;
@@ -23,17 +18,80 @@ public class BasicProfileController {
     public String getBasicInfo(@RequestParam(value = "name", defaultValue = "Alamgir") String name) {
         return name;
     }
-
-    @RequestMapping("/getOverview")
-    public String getOverview(String userId) {
-        return BasicProfileService.getOverview(userId);
-    }
     
+    //--------------------------------- About Works and Educations ------------------------------------//
     @RequestMapping("/getWorksEducation")
     public String getWorksEducation(String userId) {
         return BasicProfileService.getWorksEducation(userId);
     }
 
+    @RequestMapping("/addWorkPlace")
+    public String addWorkPlace(@RequestParam String userId, @RequestParam String workPlaceData) {
+        String response = BasicProfileService.addWorkPlace(userId, workPlaceData);
+        return response;
+    }
+    
+    @RequestMapping("/addProfessionalSkill")
+    public String addPSkill(@RequestParam String userId, @RequestParam String professionalSkillData) {
+        String response = BasicProfileService.addProfessionalSkill(userId, professionalSkillData);
+        return response;
+    }
+
+    @RequestMapping("/addUniversity")
+    public String addUniversity(@RequestParam String userId, @RequestParam String universityData) {
+        String response = BasicProfileService.addUniversity(userId, universityData);
+        return response;
+    }
+
+    @RequestMapping("/addCollege")
+    public String addCollege(@RequestParam String userId, @RequestParam String collegeData) {
+        String response = BasicProfileService.addCollege(userId, collegeData);
+        return response;
+    }
+
+    @RequestMapping("/addSchool")
+    public String addSchool(@RequestParam String userId, @RequestParam String schoolData) {
+        String response = BasicProfileService.addSchool(userId, schoolData);
+        return response;
+    }
+    
+    @RequestMapping("editWorkPlace")
+    public String editWorkPlace() {
+        
+        return "";
+    }
+    
+    @RequestMapping("editProfessionalSkill")
+    public String editProfessionalSkill() {
+        
+        return "";
+    }
+    
+    @RequestMapping("editUniversity")
+    public String editUniversity() {
+        
+        return "";
+    }
+    
+    @RequestMapping("editCollege")
+    public String editCollege() {
+        
+        return "";
+    }
+    
+    @RequestMapping("editSchool")
+    public String editSchool() {
+        
+        return "";
+    }
+
+    
+    
+    @RequestMapping("/getOverview")
+    public String getOverview(String userId) {
+        return BasicProfileService.getOverview(userId);
+    }
+    
     @RequestMapping("/getCityTown")
     public String getCityTown(@RequestParam String userId) {
         String cityTown = BasicProfileService.getCityTown(userId);
@@ -49,51 +107,7 @@ public class BasicProfileController {
         String BasicInfo = BasicProfileService.getContactBasicInfo(userId);
         return BasicInfo;
     }
-    @RequestMapping("/getAboutFQuote")
-    public String getAboutFQuote(@RequestParam String userId) {
-        String aboutFQuote = BasicProfileService.getAboutFQuote(userId);
-        return aboutFQuote;
-    }
 
-    @RequestMapping("/addWorkPlace")
-    public String addWorkPlace(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addWorkPlace(userId, additionalData);
-        return response;
-    }
-    @RequestMapping("/addAbout")
-    public String addAbout(@RequestParam String userId, @RequestParam String aboutInfo) {
-        String response = BasicProfileService.addAbout(userId, aboutInfo);
-        return response;
-    }
-    @RequestMapping("/addFQuote")
-    public String addFQuote(@RequestParam String userId, @RequestParam String fQuoteInfo) {
-        String response = BasicProfileService.addFQuote(userId, fQuoteInfo);
-        return response;
-    }
-
-    @RequestMapping("/addPSkill")
-    public String addPSkill(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addPSkill(userId, additionalData);
-        return response;
-    }
-
-    @RequestMapping("/addUniversity")
-    public String addUniversity(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addUniversity(userId, additionalData);
-        return response;
-    }
-
-    @RequestMapping("/addCollege")
-    public String addCollege(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addCollege(userId, additionalData);
-        return response;
-    }
-
-    @RequestMapping("/addSchool")
-    public String addSchool(@RequestParam String userId, @RequestParam String additionalData) {
-        String response = BasicProfileService.addSchool(userId, additionalData);
-        return response;
-    }
     @RequestMapping("/addCurrentCity")
     public String addCurrentCity(@RequestParam String userId, @RequestParam String additionalData) {
         String response = BasicProfileService.addCurrentCity(userId, additionalData);
@@ -127,6 +141,23 @@ public class BasicProfileController {
     @RequestMapping("/addEmail")
     public String addEmail(@RequestParam String userId, @RequestParam String emailInfo) {
         String response = BasicProfileService.addEmail(userId, emailInfo);
+        return response;
+    }
+    
+    @RequestMapping("/getAboutFQuote")
+    public String getAboutFQuote(@RequestParam String userId) {
+        String aboutFQuote = BasicProfileService.getAboutFQuote(userId);
+        return aboutFQuote;
+    }
+    
+    @RequestMapping("/addAbout")
+    public String addAbout(@RequestParam String userId, @RequestParam String aboutInfo) {
+        String response = BasicProfileService.addAbout(userId, aboutInfo);
+        return response;
+    }
+    @RequestMapping("/addFQuote")
+    public String addFQuote(@RequestParam String userId, @RequestParam String fQuoteInfo) {
+        String response = BasicProfileService.addFQuote(userId, fQuoteInfo);
         return response;
     }
 
