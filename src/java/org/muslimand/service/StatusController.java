@@ -39,11 +39,11 @@ public class StatusController {
 
     }
 
-    @RequestMapping("/updateStatusLike")
-    public String updateStatusLike(String statusId, String likeInfo) {
-        return StatusService.updateStatusLike(statusId, likeInfo);
-
-    }
+//    @RequestMapping("/updateStatusLike")
+//    public String updateStatusLike(String statusId, String likeInfo) {
+//        return StatusService.updateStatusLike(statusId, likeInfo);
+//
+//    }
 
     @RequestMapping("/addStatusComment")
     public String addStatusComment(String statusId, String commentInfo) {
@@ -51,10 +51,10 @@ public class StatusController {
 
     }
 
-    @RequestMapping("/updateStatusShare")
-    public String updateStatusShare(String statusId, String shareInfo) {
-        return StatusService.updateStatusShare(statusId, shareInfo);
-
-    }
+//    @RequestMapping("/updateStatusShare")
+//    public String updateStatusShare(String statusId, String shareInfo) {
+//        return StatusService.updateStatusShare(statusId, shareInfo);
+//
+//    }
 
 }

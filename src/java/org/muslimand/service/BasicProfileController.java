@@ -1,6 +1,6 @@
 package org.muslimand.service;
 
-import com.shampan.db.services.BasicProfileService;
+import com.shampan.services.BasicProfileService;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +28,11 @@ public class BasicProfileController {
     @RequestMapping("/addWorkPlace")
     public String addWorkPlace(@RequestParam String userId, @RequestParam String workPlaceData) {
         String response = BasicProfileService.addWorkPlace(userId, workPlaceData);
+        return response;
+    }
+    @RequestMapping("/UpdateWorkPlace")
+    public String UpdateWorkPlace(@RequestParam String userId, @RequestParam String workPlaceId,@RequestParam String workPlaceData) {
+        String response = BasicProfileService.UpdateWorkPlace(userId, workPlaceId,workPlaceData);
         return response;
     }
     
