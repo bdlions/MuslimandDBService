@@ -30,9 +30,9 @@ public class BasicProfileController {
         String response = BasicProfileService.addWorkPlace(userId, workPlaceData);
         return response;
     }
-    @RequestMapping("/UpdateWorkPlace")
-    public String UpdateWorkPlace(@RequestParam String userId, @RequestParam String workPlaceId,@RequestParam String workPlaceData) {
-        String response = BasicProfileService.UpdateWorkPlace(userId, workPlaceId,workPlaceData);
+    @RequestMapping("/editWorkPlace")
+    public String editWorkPlace(@RequestParam String userId, @RequestParam String workPlaceId,@RequestParam String workPlaceData) {
+        String response = BasicProfileService.editWorkPlace(userId, workPlaceId,workPlaceData);
         return response;
     }
     
@@ -89,6 +89,12 @@ public class BasicProfileController {
         
         return "";
     }
+    @RequestMapping("deleteWrokPlace")
+     public String deleteWrokPlace(@RequestParam String userId,@RequestParam String wrokPlaceId) {
+        String response = BasicProfileService.deleteWrokPlace(userId,wrokPlaceId);
+        return response;
+    }
+    
 
     
     
