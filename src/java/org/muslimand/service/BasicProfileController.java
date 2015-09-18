@@ -74,15 +74,15 @@ public class BasicProfileController {
     }
 
     @RequestMapping("editCollege")
-    public String editCollege() {
-
-        return "";
+    public String editCollege(String userId, String collegeId, String collegeData) {
+        String response = BasicProfileService.editCollege(userId, collegeId, collegeData);
+        return response;
     }
 
     @RequestMapping("editSchool")
-    public String editSchool() {
-
-        return "";
+    public String editSchool(String userId, String schoolId, String schoolData) {
+        String response = BasicProfileService.editSchool(userId, schoolId, schoolData);
+        return response;
     }
 
     @RequestMapping("deleteWrokPlace")
@@ -120,9 +120,33 @@ public class BasicProfileController {
         return response;
     }
 
+    @RequestMapping("/editCurrentCity")
+    public String editCurrentCity(@RequestParam String userId, @RequestParam String cityData) {
+        String response = BasicProfileService.editCurrentCity(userId, cityData);
+        return response;
+    }
+
+    @RequestMapping("/deleteCurrentCity")
+    public String deleteCurrentCity(@RequestParam String userId) {
+        String response = BasicProfileService.deleteCurrentCity(userId);
+        return response;
+    }
+
     @RequestMapping("/addHomeTown")
     public String addHomeTown(@RequestParam String userId, @RequestParam String additionalData) {
         String response = BasicProfileService.addHomeTown(userId, additionalData);
+        return response;
+    }
+
+    @RequestMapping("/editHomeTown")
+    public String editHomeTown(@RequestParam String userId, @RequestParam String townData) {
+        String response = BasicProfileService.editHomeTown(userId, townData);
+        return response;
+    }
+
+    @RequestMapping("/deleteHomeTown")
+    public String deleteHomeTown(@RequestParam String userId) {
+        String response = BasicProfileService.deleteHomeTown(userId);
         return response;
     }
 
