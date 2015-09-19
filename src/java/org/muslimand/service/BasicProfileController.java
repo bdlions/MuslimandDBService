@@ -162,9 +162,33 @@ public class BasicProfileController {
         return response;
     }
 
+    @RequestMapping("/editMobilePhone")
+    public String editMobilePhone(@RequestParam String userId, @RequestParam String mobileId, @RequestParam String mobilePhoneInfo) {
+        String response = BasicProfileService.editMobilePhone(userId, mobileId, mobilePhoneInfo);
+        return response;
+    }
+
+    @RequestMapping("/deleteMobilePhone")
+    public String deleteMobilePhone(@RequestParam String userId, @RequestParam String phoneId) {
+        String response = BasicProfileService.deleteMobilePhone(userId, phoneId);
+        return response;
+    }
+
     @RequestMapping("/addAddress")
     public String addAddress(@RequestParam String userId, @RequestParam String addressInfo) {
         String response = BasicProfileService.addAddress(userId, addressInfo);
+        return response;
+    }
+
+    @RequestMapping("/editAddress")
+    public String editAddress(@RequestParam String userId, @RequestParam String addressInfo) {
+        String response = BasicProfileService.editAddress(userId, addressInfo);
+        return response;
+    }
+
+    @RequestMapping("/deleteAddress")
+    public String deleteAddress(@RequestParam String userId, @RequestParam String addressId) {
+        String response = BasicProfileService.deleteAddress(userId, addressId);
         return response;
     }
 
@@ -174,10 +198,28 @@ public class BasicProfileController {
         return response;
     }
 
+    @RequestMapping("/editWebsite")
+    public String editWebsite(@RequestParam String userId, @RequestParam String websiteInfo) {
+        String response = BasicProfileService.editWebsite(userId, websiteInfo);
+        return response;
+    }
+
+    @RequestMapping("/deleteWebsite")
+    public String deleteWebsite(@RequestParam String userId, @RequestParam String websiteId) {
+        String response = BasicProfileService.deleteWebsite(userId, websiteId);
+        return response;
+    }
+
     @RequestMapping("/addEmail")
     public String addEmail(@RequestParam String userId, @RequestParam String emailInfo) {
         String response = BasicProfileService.addEmail(userId, emailInfo);
         return response;
+    }
+
+    @RequestMapping("/editEmail")
+    public String editEmail(@RequestParam String userId, @RequestParam String emailInfo) {
+//        String response = BasicProfileService.editEmail(userId, emailInfo);
+        return "";
     }
 
     @RequestMapping("/getAboutFQuote")
