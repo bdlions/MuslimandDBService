@@ -22,17 +22,11 @@ public class PhotoController {
         return PhotoService.getCategories();
     }
 
-    @RequestMapping("/createAlbum")
-    public String createAlbum(String albumInfo) {
-        return PhotoService.createAlbum(albumInfo);
-    }
-    
     @RequestMapping("/getCategoriesAndAlbums")
     public String getCategoriesAndAlbums(String userId) {
         return PhotoService.getCategoriesAndAlbums(userId);
     }
-    
-    
+
     @RequestMapping("/getAlbums")
     public String getAlbums(String userId) {
         return PhotoService.getAlbums(userId);
@@ -43,9 +37,29 @@ public class PhotoController {
         return PhotoService.getAlbum(albumId);
     }
 
+    @RequestMapping("/createAlbum")
+    public String createAlbum(String albumInfo) {
+        return PhotoService.createAlbum(albumInfo);
+    }
+
+    @RequestMapping("/editAlbum")
+    public String editAlbum(String albumId, String albumInfo) {
+        return PhotoService.editAlbum(albumId, albumInfo);
+    }
+
+    @RequestMapping("/deleteAlbum")
+    public String deleteAlbum(String albumId) {
+        return PhotoService.deleteAlbum(albumId);
+    }
+
     @RequestMapping("/addAlbumLike")
     public String addAlbumLike(String albumId, String likeInfo) {
         return PhotoService.addAlbumLike(albumId, likeInfo);
+    }
+
+    @RequestMapping("/deleteAlbumLike")
+    public String deleteAlbumLike(String albumId, String likeid) {
+        return "";
     }
 
     @RequestMapping("/addAlbumComment")
@@ -53,9 +67,19 @@ public class PhotoController {
         return PhotoService.addAlbumComment(albumId, commentInfo);
     }
 
-    @RequestMapping("/addPhoto")
-    public String addPhoto(String photoInfo) {
-        return PhotoService.addPhoto(photoInfo);
+    @RequestMapping("/editAlbumComment")
+    public String editAlbumComment(String albumId, String commentId, String commentInfo) {
+        return PhotoService.editAlbumComment(albumId, commentId, commentInfo);
+    }
+
+    @RequestMapping("/deleteAlbumComment")
+    public String deleteAlbumComment(String albumId, String commentId) {
+        return PhotoService.deleteAlbumComment(albumId, commentId);
+    }
+
+    @RequestMapping("/getPhotos")
+    public static String getPhotos(String albumId) {
+        return PhotoService.getPhotos(albumId);
     }
 
     @RequestMapping("/getPhoto")
@@ -63,9 +87,14 @@ public class PhotoController {
         return PhotoService.getPhoto(photoId);
     }
 
-    @RequestMapping("/updatePhoto")
-    public String updatePhoto(String photoId, String image) {
-        return PhotoService.updatePhoto(photoId, image);
+    @RequestMapping("/addPhotos")
+    public String addPhotos(String photoInfo) {
+        return PhotoService.addPhotos(photoInfo);
+    }
+
+    @RequestMapping("/editPhoto")
+    public String editPhoto(String photoId, String photoInfo) {
+        return PhotoService.editPhoto(photoId, photoInfo);
     }
 
     @RequestMapping("/deletePhoto")
@@ -73,8 +102,28 @@ public class PhotoController {
         return PhotoService.deletePhoto(photoId);
     }
 
-    @RequestMapping("/getPhotos")
-    public static String getPhotos(String albumId) {
-        return PhotoService.getPhotos(albumId);
+    @RequestMapping("/addPhotoLike")
+    public String addPhotoLike(String photoId, String likeInfo) {
+        return PhotoService.addPhotoLike(photoId, likeInfo);
     }
+
+    @RequestMapping("/deletePhotoLike")
+    public String deletePhotoLike(String photoId, String likeId) {
+        return PhotoService.deletePhotoLike(photoId, likeId);
+    }
+
+    @RequestMapping("/addPhotoComment")
+    public String addPhotoComment(String photoId, String commentInfo) {
+        return PhotoService.addPhotoComment(photoId, commentInfo);
+    }
+
+    @RequestMapping("/editPhotoComment")
+    public String editPhotoComment(String photoId, String commentId, String commentInfo) {
+        return PhotoService.editPhotoComment(photoId, commentId, commentInfo);
+    }
+    @RequestMapping("/deletePhotoComment")
+    public String deletePhotoComment(String photoId, String commentId) {
+        return PhotoService.deletePhotoComment(photoId, commentId);
+    }
+
 }
