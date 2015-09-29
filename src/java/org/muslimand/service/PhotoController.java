@@ -81,6 +81,10 @@ public class PhotoController {
     public static String getPhotos(String albumId) {
         return PhotoService.getPhotos(albumId);
     }
+    @RequestMapping("/getUserPhotos")
+    public static String getUserPhotos(String userId, int offset, int limit) {
+        return PhotoService.getUserPhotos(userId,offset,limit);
+    }
 
     @RequestMapping("/getPhoto")
     public String getPhoto(String photoId) {
