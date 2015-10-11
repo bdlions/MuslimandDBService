@@ -33,8 +33,8 @@ public class PhotoController {
     }
 
     @RequestMapping("/getAlbum")
-    public String getAlbum(String albumId) {
-        return PhotoService.getAlbum(albumId);
+    public String getAlbum(String userId,String albumId) {
+        return PhotoService.getAlbum(userId,albumId);
     }
 
     @RequestMapping("/createAlbum")
@@ -45,6 +45,11 @@ public class PhotoController {
     @RequestMapping("/editAlbum")
     public String editAlbum(String albumId, String albumInfo) {
         return PhotoService.editAlbum(albumId, albumInfo);
+    }
+
+    @RequestMapping("/getAlbumComments")
+    public String getAlbumComments(String albumId) {
+        return PhotoService.getAlbumComments(albumId);
     }
 
     @RequestMapping("/deleteAlbum")
@@ -60,6 +65,11 @@ public class PhotoController {
     @RequestMapping("/deleteAlbumLike")
     public String deleteAlbumLike(String albumId, String likeid) {
         return "";
+    }
+
+    @RequestMapping("/getAlbumLikeList")
+    public String getAlbumLikeList(String albumId) {
+        return PhotoService.getAlbumLikeList(albumId);
     }
 
     @RequestMapping("/addAlbumComment")
@@ -78,22 +88,28 @@ public class PhotoController {
     }
 
     @RequestMapping("/getPhotos")
-    public static String getPhotos(String albumId) {
-        return PhotoService.getPhotos(albumId);
+    public static String getPhotos(String userId,String albumId) {
+        return PhotoService.getPhotos(userId,albumId);
     }
+
     @RequestMapping("/getUserPhotos")
     public static String getUserPhotos(String userId, int offset, int limit) {
-        return PhotoService.getUserPhotos(userId,offset,limit);
+        return PhotoService.getUserPhotos(userId, offset, limit);
     }
 
     @RequestMapping("/getPhoto")
-    public String getPhoto(String photoId) {
-        return PhotoService.getPhoto(photoId);
+    public String getPhoto(String userId,String photoId) {
+        return PhotoService.getPhoto(userId,photoId);
+    }
+
+    @RequestMapping("/getPhotoListByCategory")
+    public String getPhotoListByCategory(String albumId, String categoryId, int limit, int offset) {
+        return PhotoService.getPhotoListByCategory(albumId, categoryId, limit, offset);
     }
 
     @RequestMapping("/addPhotos")
-    public String addPhotos(String photoInfo) {
-        return PhotoService.addPhotos(photoInfo);
+    public String addPhotos(String albumId ,String photoList) {
+        return PhotoService.addPhotos(albumId,photoList);
     }
 
     @RequestMapping("/editPhoto")
@@ -101,9 +117,14 @@ public class PhotoController {
         return PhotoService.editPhoto(photoId, photoInfo);
     }
 
+    @RequestMapping("/getPhotoComments")
+    public String getPhotoComments(String photoId) {
+        return PhotoService.getPhotoComments(photoId);
+    }
+
     @RequestMapping("/deletePhoto")
-    public String deletePhoto(String photoId) {
-        return PhotoService.deletePhoto(photoId);
+    public String deletePhoto(String albumId, String photoId) {
+        return PhotoService.deletePhoto(albumId,photoId);
     }
 
     @RequestMapping("/addPhotoLike")
@@ -116,6 +137,11 @@ public class PhotoController {
         return PhotoService.deletePhotoLike(photoId, likeId);
     }
 
+    @RequestMapping("/getPhotoLikeList")
+    public String getPhotoLikeList(String photoId) {
+        return PhotoService.getPhotoLikeList(photoId);
+    }
+
     @RequestMapping("/addPhotoComment")
     public String addPhotoComment(String photoId, String commentInfo) {
         return PhotoService.addPhotoComment(photoId, commentInfo);
@@ -125,6 +151,7 @@ public class PhotoController {
     public String editPhotoComment(String photoId, String commentId, String commentInfo) {
         return PhotoService.editPhotoComment(photoId, commentId, commentInfo);
     }
+
     @RequestMapping("/deletePhotoComment")
     public String deletePhotoComment(String photoId, String commentId) {
         return PhotoService.deletePhotoComment(photoId, commentId);
