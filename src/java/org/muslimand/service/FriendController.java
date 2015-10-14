@@ -17,14 +17,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/friend")
 public class FriendController {
 
-    @RequestMapping("/addFriend")
-    public String addFriend(String userId, String friendId) {
-        return FriendService.addFriend(userId, friendId);
+    @RequestMapping("/addRequest")
+    public String addRequest(String userId, String friendId,String typeId) {
+        return FriendService.addRequest(userId, friendId,typeId);
     }
-    
+    @RequestMapping("/changeRelationShipStatus")
+    public String changeRelationShipStatus(String userId, String friendId, String typeId) {
+        return FriendService.changeRelationShipStatus(userId, friendId, typeId);
+    }
+    @RequestMapping("/deleteRequest")
+    public String deleteRequest(String userId, String friendId) {
+        return FriendService.deleteRequest(userId, friendId);
+    }
+
     @RequestMapping("/getFriendList")
-    public String getFriendList(String userId) {
-        return FriendService.getFriendList(userId);
+    public String getFriendList(String userId, int offset, int limit,String statusType) {
+        return FriendService.getFriendList(userId, offset, limit,statusType);
+    }
+    @RequestMapping("/getRelationShipStatus")
+    public String getRelationShipStatus(String userId, String friendId) {
+        return FriendService.getRelationShipStatus(userId, friendId);
     }
 
 }
