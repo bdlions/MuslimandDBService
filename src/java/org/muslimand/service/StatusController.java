@@ -23,8 +23,8 @@ public class StatusController {
     }
 
     @RequestMapping("/getStatuses")
-    public String getStatuses(String userId) {
-        return StatusService.getStatuses(userId);
+    public String getStatuses(String userId, int offset, int limit) {
+        return StatusService.getStatuses(userId,offset,limit);
 
     }
     @RequestMapping("/deleteStatus")
@@ -39,11 +39,11 @@ public class StatusController {
 
     }
 
-//    @RequestMapping("/updateStatusLike")
-//    public String updateStatusLike(String statusId, String likeInfo) {
-//        return StatusService.updateStatusLike(statusId, likeInfo);
-//
-//    }
+    @RequestMapping("/addStatusLike")
+    public String addStatusLike(String statusId, String likeInfo) {
+        return StatusService.addStatusLike(statusId, likeInfo);
+
+    }
 
     @RequestMapping("/addStatusComment")
     public String addStatusComment(String statusId, String commentInfo) {
@@ -51,10 +51,20 @@ public class StatusController {
 
     }
 
-//    @RequestMapping("/updateStatusShare")
-//    public String updateStatusShare(String statusId, String shareInfo) {
-//        return StatusService.updateStatusShare(statusId, shareInfo);
-//
-//    }
+    @RequestMapping("/shareStatus")
+    public String shareStatus(String statusId, String refUserInfo,String shareInfo) {
+        return StatusService.shareStatus(statusId, refUserInfo,shareInfo);
+
+    }
+    @RequestMapping("/getStatusLikeList")
+    public String getStatusLikeList(String statusId) {
+        return StatusService.getStatusLikeList(statusId);
+
+    }
+    @RequestMapping("/getStatusComments")
+    public String getStatusComments(String statusId) {
+        return StatusService.getStatusComments(statusId);
+
+    }
 
 }
