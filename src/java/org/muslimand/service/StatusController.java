@@ -61,6 +61,11 @@ public class StatusController {
         return StatusService.getStatusLikeList(statusId);
 
     }
+    @RequestMapping("/getStatusShareList")
+    public String getStatusShareList(String statusId) {
+        return StatusService.getStatusShareList(statusId);
+
+    }
     @RequestMapping("/getStatusComments")
     public String getStatusComments(String statusId) {
         return StatusService.getStatusComments(statusId);

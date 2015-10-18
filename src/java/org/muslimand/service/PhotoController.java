@@ -36,6 +36,10 @@ public class PhotoController {
     public String getAlbum(String userId,String albumId) {
         return PhotoService.getAlbum(userId,albumId);
     }
+    @RequestMapping("/getAlbumInfo")
+    public String getAlbumInfo(String userId,String albumId) {
+        return PhotoService.getAlbumInfo(userId,albumId);
+    }
 
     @RequestMapping("/createAlbum")
     public String createAlbum(String albumInfo) {
