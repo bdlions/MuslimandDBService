@@ -59,9 +59,9 @@ public class RelationController {
         return RelationService.getRelationList(userId, relationTypeId, offset, limit);
     }
     
-    @RequestMapping("/getRelationType")
-    public String getRelationType(String fromUserId, String toUserId)
+    @RequestMapping("/getRelationInfo")
+    public String getRelationInfo(String fromUserId, String toUserId)
     {
-        return RelationService.getRelationType(fromUserId, toUserId);
+        return RelationService.getRelationInfo(fromUserId, toUserId);
     }
 }
