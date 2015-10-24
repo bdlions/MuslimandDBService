@@ -27,9 +27,13 @@ public class VideoController {
         return VideoService.addVideo(videoInfo);
     }
 
+    @RequestMapping("/getVideos")
+    public String getVideos(String userId) {
+        return VideoService.getVideos(userId);
+    }
     @RequestMapping("/getVideo")
-    public String getVideo(String videoId) {
-        return VideoService.getVideo(videoId);
+    public String getVideo(String userId,String videoId) {
+        return VideoService.getVideo(userId,videoId);
     }
 
     @RequestMapping("/updateVideo")
