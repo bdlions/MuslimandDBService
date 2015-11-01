@@ -1,6 +1,6 @@
 package org.muslimand.service;
 
-import com.shampan.db.services.LandingPage;
+import com.shampan.services.LandingPage;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
