@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/notification")
 public class NotificationController {
     @RequestMapping("/getNotificationCounter")
-    public String getNotificationCounter()
+    public String getNotificationCounter(String userId)
     {
-        return NotificationService.getNotificationCounter();
+        return NotificationService.getNotificationCounter(userId);
     }
     
     @RequestMapping("/addFriendNotification")
@@ -60,13 +60,13 @@ public class NotificationController {
     }
     
     @RequestMapping("/updateStatusGetGeneralNotifications")
-    public String updateStatusGetGeneralNotifications(String userId, String statusTypeId, String offset, String limit)
+    public String updateStatusGetGeneralNotifications(String userId, String statusTypeId, int offset, int limit)
     {
         return NotificationService.updateStatusGetGeneralNotifications(userId, statusTypeId, offset, limit);
     }
     
     @RequestMapping("/getGeneralNotifications")
-    public String getGeneralNotifications(String userId, String offset, String limit)
+    public String getGeneralNotifications(String userId, int offset, int limit)
     {
         return NotificationService.getGeneralNotifications(userId, offset, limit);
     }

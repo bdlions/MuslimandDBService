@@ -24,9 +24,16 @@ public class StatusController {
 
     @RequestMapping("/getStatuses")
     public String getStatuses(String userId, int offset, int limit) {
-        return StatusService.getStatuses(userId,offset,limit);
+        return StatusService.getStatuses(userId, offset, limit);
 
     }
+
+    @RequestMapping("/getStatusDetails")
+    public String getStatusDetails(String statusId) {
+        return StatusService.getStatusDetails(statusId);
+
+    }
+
     @RequestMapping("/deleteStatus")
     public String deleteStatus(String statusId) {
         return StatusService.deleteStatus(statusId);
@@ -40,32 +47,35 @@ public class StatusController {
     }
 
     @RequestMapping("/addStatusLike")
-    public String addStatusLike(String statusId, String likeInfo) {
-        return StatusService.addStatusLike(statusId, likeInfo);
+    public String addStatusLike(String userId, String statusId, String likeInfo) {
+        return StatusService.addStatusLike(userId, statusId, likeInfo);
 
     }
 
     @RequestMapping("/addStatusComment")
-    public String addStatusComment(String statusId, String commentInfo) {
-        return StatusService.addStatusComment(statusId, commentInfo);
+    public String addStatusComment(String userId, String statusId, String commentInfo) {
+        return StatusService.addStatusComment(userId, statusId, commentInfo);
 
     }
 
     @RequestMapping("/shareStatus")
-    public String shareStatus(String statusId, String refUserInfo,String shareInfo) {
-        return StatusService.shareStatus(statusId, refUserInfo,shareInfo);
+    public String shareStatus(String userId, String statusId, String refUserInfo, String shareInfo) {
+        return StatusService.shareStatus(userId, statusId, refUserInfo, shareInfo);
 
     }
+
     @RequestMapping("/getStatusLikeList")
     public String getStatusLikeList(String statusId) {
         return StatusService.getStatusLikeList(statusId);
 
     }
+
     @RequestMapping("/getStatusShareList")
     public String getStatusShareList(String statusId) {
         return StatusService.getStatusShareList(statusId);
 
     }
+
     @RequestMapping("/getStatusComments")
     public String getStatusComments(String statusId) {
         return StatusService.getStatusComments(statusId);

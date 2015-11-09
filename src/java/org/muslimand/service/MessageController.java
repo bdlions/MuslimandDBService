@@ -17,19 +17,19 @@ public class MessageController {
     }
     
     @RequestMapping("/addMessage")
-    public String addMessage()
+    public String addMessage(String userIdList,String senderId,String message)
     {
-        return MessageService.addMessage();
+        return MessageService.addMessage(userIdList,senderId,message);
     }
     
     @RequestMapping("/getMessageSummaryList")
-    public String getMessageSummaryList(String userId, String offset, String limit)
+    public String getMessageSummaryList(String userId, int offset, int limit)
     {
         return MessageService.getMessageSummaryList(userId, offset, limit);
     }
     
     @RequestMapping("/getMessageList")
-    public String getMessageList(String groupId, String offset, String limit)
+    public String getMessageList(String groupId, int offset, int limit)
     {
         return MessageService.getMessageList(groupId, offset, limit);
     }
