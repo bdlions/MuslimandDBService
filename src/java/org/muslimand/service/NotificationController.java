@@ -24,9 +24,9 @@ public class NotificationController {
     }
     
     @RequestMapping("/updateStatusGetFriendNotifications")
-    public String updateStatusGetFriendNotifications(String userId, String statusTypeId, String offset, String limit)
+    public String updateStatusGetFriendNotifications(String userId, String offset, String limit)
     {
-        return NotificationService.updateStatusGetFriendNotifications(userId, statusTypeId, offset, limit);
+        return NotificationService.updateStatusGetFriendNotifications(userId, offset, limit);
     }
     
     @RequestMapping("/getFriendNotifications")

@@ -28,9 +28,15 @@ public class StatusController {
 
     }
 
+    @RequestMapping("/getUserProfileStatuses")
+    public String getUserProfileStatuses(String userId, String mappingId, int offset, int limit) {
+        return StatusService.getUserProfileStatuses(userId, mappingId, offset, limit);
+
+    }
+
     @RequestMapping("/getStatusDetails")
-    public String getStatusDetails(String statusId) {
-        return StatusService.getStatusDetails(statusId);
+    public String getStatusDetails(String userId, String statusId) {
+        return StatusService.getStatusDetails(userId, statusId);
 
     }
 
