@@ -57,10 +57,15 @@ public class StatusController {
         return StatusService.addStatusLike(userId, statusId, likeInfo);
 
     }
+    @RequestMapping("/addStatusCommentLike")
+    public String addStatusCommentLike(String statusId, String commentId, String likeInfo) {
+        return StatusService.addStatusCommentLike(statusId, commentId, likeInfo);
+
+    }
 
     @RequestMapping("/addStatusComment")
-    public String addStatusComment(String userId, String statusId, String commentInfo) {
-        return StatusService.addStatusComment(userId, statusId, commentInfo);
+    public String addStatusComment(String referenceUserInfo, String statusId, String commentInfo) {
+        return StatusService.addStatusComment(referenceUserInfo, statusId, commentInfo);
 
     }
 
