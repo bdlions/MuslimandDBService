@@ -88,8 +88,8 @@ public class StatusController {
     }
 
     @RequestMapping("/getStatusComments")
-    public String getStatusComments(String statusId) {
-        return StatusService.getStatusComments(statusId);
+    public String getStatusComments(String userId, String statusId) {
+        return StatusService.getStatusComments(userId, statusId);
 
     }
 
