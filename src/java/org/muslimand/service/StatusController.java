@@ -92,5 +92,21 @@ public class StatusController {
         return StatusService.getStatusComments(userId, statusId);
 
     }
+    
+    @RequestMapping("/updateStatusComment")
+    public String updateStatusComment(String statusId, String commentId, String description) {
+        return StatusService.updateStatusComment(statusId, commentId, description);
+
+    }
+    @RequestMapping("/deleteStatusComment")
+    public String deleteStatusComment(String statusId, String commentId) {
+        return StatusService.deleteStatusComment(statusId, commentId);
+
+    }
+    @RequestMapping("/getStatusCommentLikeList")
+    public String getStatusCommentLikeList(String statusId, String commentId) {
+        return StatusService.getStatusCommentLikeList(statusId, commentId);
+
+    }
 
 }
