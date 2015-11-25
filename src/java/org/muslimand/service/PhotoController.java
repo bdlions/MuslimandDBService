@@ -47,8 +47,8 @@ public class PhotoController {
     }
 
     @RequestMapping("/editAlbum")
-    public String editAlbum(String albumId, String albumInfo) {
-        return PhotoService.editAlbum(albumId, albumInfo);
+    public String editAlbum(String userId, String albumId, String albumInfo) {
+        return PhotoService.editAlbum(userId, albumId, albumInfo);
     }
 
     @RequestMapping("/getAlbumComments")
@@ -112,8 +112,8 @@ public class PhotoController {
     }
 
     @RequestMapping("/addPhotos")
-    public String addPhotos(String albumId ,String photoList) {
-        return PhotoService.addPhotos(albumId,photoList);
+    public String addPhotos(String userId, String albumId ,String photoList) {
+        return PhotoService.addPhotos(userId, albumId, photoList);
     }
 
     @RequestMapping("/editPhoto")
@@ -127,8 +127,8 @@ public class PhotoController {
     }
 
     @RequestMapping("/deletePhoto")
-    public String deletePhoto(String albumId, String photoId) {
-        return PhotoService.deletePhoto(albumId,photoId);
+    public String deletePhoto(String userId, String albumId, String photoId) {
+        return PhotoService.deletePhoto(userId, albumId, photoId);
     }
 
     @RequestMapping("/addPhotoLike")
