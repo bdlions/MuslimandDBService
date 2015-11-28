@@ -108,5 +108,10 @@ public class StatusController {
         return StatusService.getStatusCommentLikeList(statusId, commentId);
 
     }
+    @RequestMapping("/getRecentActivities")
+    public String getRecentActivities(String userId, int offset, int limit ) {
+        return StatusService.getRecentActivities(userId, offset, limit);
+
+    }
 
 }
