@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/landingpage")
 public class LandingPageController {
 
-    @RequestMapping("/getCountryAndReligion")
-    public String getCountryAndReligion() {
-        return LandingPage.getCountryAndReligion();
+    @RequestMapping("/getLandingPageInfo")
+    public String getLandingPageInfo() {
+        return LandingPage.getLandingPageInfo();
     }
 }
