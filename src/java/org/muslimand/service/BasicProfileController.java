@@ -91,6 +91,30 @@ public class BasicProfileController {
         return response;
     }
 
+    @RequestMapping("deletePSkill")
+    public String deletePSkill(String userId, String pSkillId) {
+        String response = BasicProfileService.deletePSkill(userId, pSkillId);
+        return response;
+    }
+
+    @RequestMapping("deleteUniversity")
+    public String deleteUniversity(String userId, String universityId) {
+        String response = BasicProfileService.deleteUniversity(userId, universityId);
+        return response;
+    }
+
+    @RequestMapping("deleteCollege")
+    public String deleteCollege(String userId, String collegeId) {
+        String response = BasicProfileService.deleteCollege(userId, collegeId);
+        return response;
+    }
+
+    @RequestMapping("deleteSchool")
+    public String deleteSchool(String userId, String schoolId) {
+        String response = BasicProfileService.deleteSchool(userId, schoolId);
+        return response;
+    }
+
     @RequestMapping("/getOverview")
     public String getOverview(String userId) {
         return BasicProfileService.getOverview(userId);
@@ -175,7 +199,7 @@ public class BasicProfileController {
     }
 
     @RequestMapping("/addAddress")
-    public String addAddress(@RequestParam String userId, @RequestParam String addressInfo) {
+    public String addAddress(String userId, String addressInfo) {
         String response = BasicProfileService.addAddress(userId, addressInfo);
         return response;
     }
@@ -217,9 +241,19 @@ public class BasicProfileController {
     }
 
     @RequestMapping("/editEmail")
-    public String editEmail(@RequestParam String userId, @RequestParam String emailInfo) {
-//        String response = BasicProfileService.editEmail(userId, emailInfo);
+    public String editEmail(@RequestParam String userId, @RequestParam String emailId, @RequestParam String emailInfo) {
+        String response = BasicProfileService.editEmail(userId, emailId, emailInfo);
+        return response;
+    }
+    @RequestMapping("/editRelationshipStatus")
+    public String editRelationshipStatus(@RequestParam String userId, @RequestParam String relationshipStatus) {
+//        String response = BasicProfileService.editRelationshipStatus(userId, relationshipStatus);
         return "";
+    }
+    @RequestMapping("/deleteEmail")
+    public String deleteEmail(@RequestParam String userId, @RequestParam String emailId) {
+        String response = BasicProfileService.deleteEmail(userId, emailId);
+        return response;
     }
 
     @RequestMapping("/getAboutFQuote")
