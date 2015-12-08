@@ -11,26 +11,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/message")
 public class MessageController {
-    public MessageController()
-    {
-    
+
+    public MessageController() {
+
     }
-    
+
     @RequestMapping("/addMessage")
-    public String addMessage(String userIdList,String senderId,String message)
-    {
-        return MessageService.addMessage(userIdList,senderId,message);
+    public String addMessage(String userIdList, String senderId, String message) {
+        return MessageService.addMessage(userIdList, senderId, message);
     }
-    
+    @RequestMapping("/addMessageByGroupId")
+    public String addMessageByGroupId(String groupId, String senderInfo, String message) {
+        return MessageService.addMessageByGroupId(groupId, senderInfo, message);
+    }
+
     @RequestMapping("/getMessageSummaryList")
-    public String getMessageSummaryList(String userId, int offset, int limit)
-    {
+    public String getMessageSummaryList(String userId, int offset, int limit) {
         return MessageService.getMessageSummaryList(userId, offset, limit);
     }
-    
+
     @RequestMapping("/getMessageList")
-    public String getMessageList(String groupId, int offset, int limit)
-    {
+    public String getMessageList(String groupId, int offset, int limit) {
         return MessageService.getMessageList(groupId, offset, limit);
     }
+
+   
 }
